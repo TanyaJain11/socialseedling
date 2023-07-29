@@ -1,4 +1,6 @@
 // utils/unsplashApi.js
+// EgAz68mnXErXB8UQvtRpSIDlO8DLGbxBszUpcFZ0Xpk
+// 22F9FmvrmISDnTKyilIb1LDK407ja2R6Y_6JrDPE5uQ
 const API_KEY = 'EgAz68mnXErXB8UQvtRpSIDlO8DLGbxBszUpcFZ0Xpk';
 const API_URL = 'https://api.unsplash.com';
 import axios from 'axios';

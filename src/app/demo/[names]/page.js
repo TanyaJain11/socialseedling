@@ -25,6 +25,7 @@ const UserProfile = ({params}) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [darkMode, setDarkMode] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
   
   useEffect(() => {
    
@@ -49,6 +50,7 @@ const UserProfile = ({params}) => {
         if (Array.isArray(response)) {
           setPhotos(response);
         } else {
+            setHasMore(false);        
           setPhotos([]);
         }
       } catch (error) {
@@ -71,7 +73,7 @@ const UserProfile = ({params}) => {
     <InfiniteScroll
       dataLength={photos.length}
       next={fetchUserPhotos}
-     
+     hasMore={hasMore}
       loader={<h4>Loading...</h4>}
     
     >

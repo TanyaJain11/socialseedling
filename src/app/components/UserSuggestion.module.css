@@ -1,0 +1,36 @@
+.userSuggestions {
+    position: fixed;
+    display: flex;
+    top: 90px;
+    right: 122px;
+    width: 300px;
+    padding: 16px;
+   
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+  }
+  .profileImage {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+
+  }
+  
+  
+  .userSuggestions h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .userSuggestions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .userSuggestions li {
+    display:flex;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
