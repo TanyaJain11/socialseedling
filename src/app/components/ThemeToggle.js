@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import styles from './ThemeToggle.module.css';
-import ReactTooltip from 'react-tooltip';
+import { Tooltip } from 'react-tooltip';
 
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -16,7 +16,7 @@ const ThemeToggle = () => {
         <span data-tip={darkMode ? 'Light Mode' : 'Dark Mode'} data-for="themeToggleTooltip">
           {darkMode ? <FaSun size={24} /> : <FaMoon size={24} />}
         </span>
-        <ReactTooltip id="themeToggleTooltip" place="left" effect="solid" />
+        <Tooltip id="themeToggleTooltip" place="left" effect="solid" />
       </div>
       <button className={`${styles.toggle} ${darkMode ? styles.dark : styles.light}`} onClick={handleToggle} />
     </div>

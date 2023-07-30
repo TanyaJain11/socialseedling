@@ -28,13 +28,13 @@ const Card = ({props,darkMode}) => {
         <AiOutlineHeart className={styles.likeIcon} size={32}/>
  
         <span className={styles.likeCount}>Likes:{props.likes}</span>
-       {props.location.country!=null?
-                  <span style={{["display"]:"flex",["justify-content"]:"end"}}><FaLocationDot className={styles.likeIcon} size={20}/>{props.location?.country}</span>                
+       {props.location?.country!=null?
+                  <span style={{["display"]:"flex",["justifyContent"]:"end"}}><FaLocationDot className={styles.likeIcon} size={20}/>{props.location?.country}</span>                
                 :<></>}
       </div>
-      <div style={{["display"]:"flex",["justify-content"]:"start",["padding-left"]:"20px"}}>
+      <div style={{["display"]:"flex",["justifyContent"]:"start",["paddingLeft"]:"20px"}}>
         <span>{props.views}</span>
-        <span style={{["justify-content"]:"end"}}>{props.topic_submission}</span>
+        <span style={{["justifyContent"]:"end"}}>{props.topic_submission}</span>
       </div>
       </div>
       {/* <img

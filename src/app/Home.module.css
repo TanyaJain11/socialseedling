@@ -183,6 +183,15 @@
   .theme-toggle.light:before {
     transform: translate(-50%, -50%) scale(0);
   }
+
+  .dark.header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: rgb(29, 21, 21);
+      border-bottom: 1px solid #e1e1e1;
+    }
   
   
   

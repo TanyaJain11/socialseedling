@@ -1,0 +1,38 @@
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchUserPhotos } from '../../app/utils/unsplashApi';
+
+export const fetchUserPhotosAndCache = (username) => async (dispatch) => {
+  try {
+    dispatch(apiStart()); // Dispatch the action to set loading to true
+    const response = await fetchUserPhotos(username);
+    dispatch(apiSuccess(response)); // Dispatch the action to store the data in Redux
+  } catch (error) {
+    dispatch(apiFailure(error.message)); // Dispatch the action to store the error in Redux
+  }
+};
+
+const apiSlice = createSlice({
+  name: 'api',
+  initialState: {
+    data: null, // The cached API data
+    loading: false,
+    error: '',
+  },
+  reducers: {
+    apiStart: (state) => {
+      state.loading = true;
+      state.error = '';
+    },
+    apiSuccess: (state, action) => {
+      state.loading = false;
+      state.data = action.payload;
+    },
+    apiFailure: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+  },
+});
+
+export const { apiStart, apiSuccess, apiFailure } = apiSlice.actions;
+export default apiSlice.reducer;

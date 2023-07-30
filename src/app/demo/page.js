@@ -12,6 +12,7 @@ import UserSuggestions from '../components/Usersuggestions'
 import ThemeToggle from '../components/ThemeToggle'
 import { FaRegMoon } from 'react-icons/fa';
 import { FaSun } from 'react-icons/fa';
+import UserProfileHeader from '../components/UserProfileHeader';
 
 const NewsFeed = () => {
   const [photos, setPhotos] = useState([]);
@@ -61,9 +62,10 @@ const NewsFeed = () => {
 
   return (
     <div className={darkMode ? styles['dark-mode'] : styles['light-mode']}>
+      <UserProfileHeader username={NewsFeed} profileImage={null} darkMode={darkMode}/>
       <h1>News Feed</h1>
-      <button className={` theme-toggle ${darkMode ? styles['dark','theme-toggle'] : styles['light','theme-toggle']}`} style={{"margin-left":"15px"}} onClick={() => setDarkMode(!darkMode)}>
-      {darkMode ? <FaRegMoon style={{"padding-left":"5px"}} size={20} color="black"/> : <FaSun style={{"padding-left":"5px"}} size={20} color="black"/>}</button>
+      <button className={` theme-toggle ${darkMode ? styles['dark','theme-toggle'] : styles['light','theme-toggle']}`} style={{"marginLeft":"15px"}} onClick={() => setDarkMode(!darkMode)}>
+      {darkMode ? <FaRegMoon style={{"paddingLeft":"5px"}} size={20} color="black"/> : <FaSun style={{"paddingLeft":"5px"}} size={20} color="black"/>}</button>
     
       <InfiniteScroll
         dataLength={photos.length}

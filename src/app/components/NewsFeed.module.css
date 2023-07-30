@@ -21,8 +21,11 @@
     margin: 5px 0;
   }
 
-  .name{
-   color: #b5e853;;
+  .dark-mode.name{
+   color: #b5e853;
+  }
+  .light-mode.name{
+    color:black;
   }
   /* NewsFeed.module.css */
 .light-mode {
