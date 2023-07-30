@@ -516,9 +516,9 @@ const UserProfile = ({ params }) => {
     //   </InfiniteScroll>
     // </div>
     <div className={darkMode ? cardStyle['dark-mode'] : cardStyle['light-mode']}>
-       <UserProfileHeader username={Uname} profileImage={Uprofile} darkMode={darkMode} />
-      <button className={` theme-toggle ${darkMode ? cardStyle['dark','theme-toggle'] : cardStyle['light','theme-toggle']}`} style={{"margin-left":"15px"}} onClick={() => setDarkMode(!darkMode)}>
-       {darkMode ? <FaRegMoon style={{"padding-left":"5px"}} size={20} color="black"/> : <FaSun style={{"padding-left":"5px"}} size={20} color="black"/>}</button>
+       <UserProfileHeader username={Uname} darkMode={darkMode} />
+      <button className={` theme-toggle ${darkMode ? cardStyle['dark','theme-toggle'] : cardStyle['light','theme-toggle']}`} style={{"marginLeft":"15px"}} onClick={() => setDarkMode(!darkMode)}>
+       {darkMode ? <FaRegMoon style={{"paddingLeft":"5px"}} size={20} color="black"/> : <FaSun style={{"paddingLeft":"5px"}} size={20} color="black"/>}</button>
        <button style={{"position":"fixed","right":"122px"}} onClick={() => setShowCard((prevState) => !prevState)}>
          {showCard ? 'Switch To List View' : 'Switch To Grid View'} {/* Toggle button text */}
        </button>

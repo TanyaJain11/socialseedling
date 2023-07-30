@@ -1,8 +1,8 @@
 export const fetchRandomPhotos = async () => {
   try {
-    const response = await fetch(`${process.env.API_URL}/photos/random?count=10`, {
+    const response = await fetch(`https://api.unsplash.com/photos/random?count=10`, {
       headers: {
-        Authorization: `Client-ID ${process.env.API_KEY}`,
+        Authorization: `Client-ID EgAz68mnXErXB8UQvtRpSIDlO8DLGbxBszUpcFZ0Xpk`,
       },
     });
 
@@ -17,9 +17,10 @@ export const fetchRandomPhotos = async () => {
     return [];
   }
 };
-
+// ${process.env.API_KEY}
+// ${process.env.API_URL}
 export const fetchUserPhotos = async (username) => {
-  const url = `${process.env.API_URL}/users/${username}/photos?client_id=${process.env.API_KEY}`;
+  const url = `https://api.unsplash.com/users/${username}/photos?client_id=EgAz68mnXErXB8UQvtRpSIDlO8DLGbxBszUpcFZ0Xpk`;
 
   try {
     const response = await fetch(url);

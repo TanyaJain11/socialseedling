@@ -59,7 +59,7 @@ const NewsFeed = () => {
 
   return (
     <div className={darkMode ? styles['dark-mode'] : styles['light-mode']}>
-      <UserProfileHeader username={NewsFeed} profileImage={null} darkMode={darkMode}/>
+      
       <h1>News Feed</h1>
       <button className={` theme-toggle ${darkMode ? styles['dark','theme-toggle'] : styles['light','theme-toggle']}`} style={{"marginLeft":"15px"}} onClick={() => setDarkMode(!darkMode)}>
       {darkMode ? <FaRegMoon style={{"paddingLeft":"5px"}} size={20} color="black"/> : <FaSun style={{"paddingLeft":"5px"}} size={20} color="black"/>}</button>
@@ -70,6 +70,7 @@ const NewsFeed = () => {
         hasMore={hasMore}
         loader={<h4>Loading...</h4>}
         endMessage={<p>No more photos to display.</p>}
+        priority
       >
         {/* <div className={styles['grid-container']}>
           {photos.map((photo) => (
