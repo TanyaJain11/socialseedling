@@ -14,6 +14,10 @@ module.exports = {
         ];
       },
     nextConfig,
+    env: {
+       API_KEY : 'EgAz68mnXErXB8UQvtRpSIDlO8DLGbxBszUpcFZ0Xpk',
+       API_URL :'https://api.unsplash.com',
+    },
     images: {
       domains: ['plus.unsplash.com', 'images.unsplash.com'], // Add 'images.unsplash.com' as an allowed image host
     },

@@ -1,17 +1,8 @@
-// utils/unsplashApi.js
-// EgAz68mnXErXB8UQvtRpSIDlO8DLGbxBszUpcFZ0Xpk
-// 22F9FmvrmISDnTKyilIb1LDK407ja2R6Y_6JrDPE5uQ
-const API_KEY = 'EgAz68mnXErXB8UQvtRpSIDlO8DLGbxBszUpcFZ0Xpk';
-const API_URL = 'https://api.unsplash.com';
-import axios from 'axios';
-
-const UPLOAD_URL = 'https://api.unsplash.com/photos';
-
 export const fetchRandomPhotos = async () => {
   try {
-    const response = await fetch(`${API_URL}/photos/random?count=10`, {
+    const response = await fetch(`${process.env.API_URL}/photos/random?count=10`, {
       headers: {
-        Authorization: `Client-ID ${API_KEY}`,
+        Authorization: `Client-ID ${process.env.API_KEY}`,
       },
     });
 
@@ -28,7 +19,7 @@ export const fetchRandomPhotos = async () => {
 };
 
 export const fetchUserPhotos = async (username) => {
-  const url = `${API_URL}/users/${username}/photos?client_id=${API_KEY}`;
+  const url = `${process.env.API_URL}/users/${username}/photos?client_id=${process.env.API_KEY}`;
 
   try {
     const response = await fetch(url);
