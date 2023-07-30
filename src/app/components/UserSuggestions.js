@@ -59,7 +59,7 @@ const UserSuggestions = ({ props }) => {
           {/* <h3>Suggested Users</h3> */}
           <ul>
             {props.map((user) => (
-              <Link key={user.id} href={`/demo/${encodeURIComponent(user.user.username)}`}>
+              <Link key={user.id} href={`/newsLetter/${encodeURIComponent(user.user.username)}`}>
                 <li key={user}>
                   <img
                     src={user.user.profile_image?.small}
@@ -79,7 +79,7 @@ const UserSuggestions = ({ props }) => {
         
           <ul>
             {props.map((user) => (
-              <Link key={user.id} href={`/demo/${encodeURIComponent(user.user.username)}`}>
+              <Link key={user.id} href={`/newsLetter/${encodeURIComponent(user.user.username)}`}>
                 <li key={user}>
                   <img
                     src={user.user.profile_image?.small}

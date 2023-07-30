@@ -84,7 +84,19 @@ const NewsFeed = () => {
       <h1 className={styles['alignn']}>News Feed</h1>
       <button className={` theme-toggle ${darkMode ? styles['dark','theme-toggle'] : styles['light','theme-toggle']}`} style={{"marginLeft":"15px"}} onClick={() => setDarkMode(!darkMode)}>
       {darkMode ? <FaSun style={{"paddingLeft":"5px"}} size={20} color="black"/> : <FaSun style={{"paddingLeft":"5px"}} size={20} color="black"/>}</button>
-    
+     
+      {!isMediumOrLargeScreen && (
+        <div className={styles['hamburger-icon']} onClick={toggleUserSuggestions}>
+          <FaBars />
+        </div>
+      )}
+
+      {/* Render the UserSuggestions component based on the conditions */}
+      {(showUserSuggestions || isMediumOrLargeScreen) && (
+        <UserSuggestions
+          props={username}
+        />
+      )}
       <InfiniteScroll
         dataLength={photos.length}
         next={fetchPhotos}
@@ -124,19 +136,7 @@ const NewsFeed = () => {
           ))}
     {/* Render the hamburger icon for small screens */}
      {/* Render the hamburger icon for small screens */}
-     
-     {!isMediumOrLargeScreen && (
-        <div className={styles['hamburger-icon']} onClick={toggleUserSuggestions}>
-          <FaBars />
-        </div>
-      )}
-
-      {/* Render the UserSuggestions component based on the conditions */}
-      {(showUserSuggestions || isMediumOrLargeScreen) && (
-        <UserSuggestions
-          props={username}
-        />
-      )}
+    
 
       {/* <UserSuggestions props={username} classs={styles['userSuggestions'] }/> */}
     </div>

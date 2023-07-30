@@ -38,11 +38,7 @@
 .contentRow h2{
     margin-bottom:1rem;
 }
-.contentBlock p,
-.textList li{
-    color: var(--gray-45);
-    line-height: 1.85rem;
-}
+
 .contentBlock p{
     font-size:1.10rem;
 }
@@ -50,82 +46,29 @@
     font-weight:normal;
     color: var(--gray-25)
 }
-.textList li{
-    font-size:1.10rem;
-    list-style:none;
-}
-.contentBlock p a,
-.textList li a{
-    color: var(--accent-blue-50);
-}
-.textList li a{
-    margin-right:.5rem;
-}
-.textList li span{
-    font-size:1rem;
-}
+
 .contentBlock{
     width: 100%;
 }
-.textList h3{
-    font-size:1.15rem;
-    color: var(--gray-40);
-    margin-bottom:.65rem;
-}
 
-.features{
-    display: flex;
-    flex-direction:column;
-    gap:2rem;
-    width:100%;
-    margin-top: 1rem;
-    justify-content: center;
-}
-.featureCard{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:1rem;
-    margin-bottom:2rem;
-    padding:1rem;
-}
-.featureCard p{
-    color:var(--gray-40);
-    font-size:1.15rem;
-}
 
-.profilePicture{
-    padding:0 2rem;
-}
-.socialLinks{
-    position: relative;
-    display: flex;
-}
-.socialItem{
-    position: absolute;
-    transform: scale(105%);
-    transition: transform ease-in-out .2s;
-}
-.socialItem:hover{
-    transform: scale(140%);
-}
-.linkLinkedin{
-    left:132.14px;
-    top:60.36px;
-}
-.linkYoutube{
-    left:178.82px;
-    top:115.84px;
-}
-.linkGithub{
-    left:176.81px;
-    top:8.72px;
-}
+
 .textBlock{
     font-size: 40px;
     color:#b5e853;
 }
+.appName {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #151515;
+    border-bottom: 1px solid #e1e1e1;
+  }
 
 @media screen and (min-width:920px){
     .mainContent{
