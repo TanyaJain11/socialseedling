@@ -103,7 +103,7 @@ const UserProfile = ({ params }) => {
             
               <Link key={photo.id} href={`/newsLetter/${encodeURIComponent(photo.user.username)}`}>
                 <div key={photo.id} className={styles['grid-item']}>
-                  <Image
+                  <img
                     src={photo.urls?.small}
                     alt={photo.alt_description}
                     width={photo.width}
