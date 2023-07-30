@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../Home.module.css';
+import styles from '../styles/Home.module.css';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { FaLocationDot } from 'react-icons/fa6';
 
@@ -22,9 +22,7 @@ const Card = ({props,darkMode}) => {
         className={styles.postImage}
       />
       <div>
-      <div className={styles.likes}>.
-      
-        {/* <span className={styles.likeIcon}>❤️</span> */}
+      <div className={styles.likes}>
         <AiOutlineHeart className={styles.likeIcon} size={32}/>
  
         <span className={styles.likeCount}>Likes:{props.likes}</span>
@@ -37,22 +35,7 @@ const Card = ({props,darkMode}) => {
         <span style={{["justifyContent"]:"end"}}>{props.topic_submission}</span>
       </div>
       </div>
-      {/* <img
-          src="https://via.placeholder.com/150"
-          alt="User Profile"
-          className={styles.profileImage}
-        />
-        <p className={styles.username}>john_doe</p>
-      </div>
-      <img
-        src="https://via.placeholder.com/600x400"
-        alt="Post"
-        className={styles.postImage}
-      />
-      <div className={styles.likes}>
-        <span className={styles.likeIcon}>❤️</span>
-        <span className={styles.likeCount}>Likes: 100</span>
-      </div> */}
+
     </div>
   );
 };

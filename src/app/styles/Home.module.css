@@ -117,12 +117,6 @@
     color: var(--text-color);
   }
 
-/*   
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  } */
   .userSuggestions {
     position: fixed;
     top: 90px;
@@ -130,7 +124,7 @@
     width: 200px;
    
     padding: 16px;
-    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+
   }
   
   .userSuggestions h3 {
@@ -193,6 +187,27 @@
       border-bottom: 1px solid #e1e1e1;
     }
   
-  
-  
-  
+    .hamburger-container {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      display: block;
+      z-index: 9999;
+      background-color: white;
+      padding: 5px;
+      border-radius: 50%;
+    }
+
+.hamburger-icon {
+  position: fixed;
+  top: 20px; 
+  right: 20px; 
+  cursor: pointer;
+  font-size: 24px;
+  color: #ffffff; 
+  z-index: 100; 
+}
+.alignn{
+  text-align: center;
+}

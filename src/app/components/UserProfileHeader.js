@@ -1,20 +1,40 @@
 // components/UserProfileHeader.js
 
-import React from 'react';
-import styles from './UserProfileHeader.module.css'; // Import the CSS module for styling
+import React,{useState,useEffect} from 'react';
+import Link from 'next/link';
 
-    const UserProfileHeader = ({ username, darkMode }) => {
+
+import styles from '../styles/UserProfileHeader.module.css'; // Import the CSS module for styling
+
+    const UserProfileHeader = ({ username, profileImage,darkMode }) => {
+      const [isMediumOrLargeScreen, setIsMediumOrLargeScreen] = useState(true);
+
+      useEffect(() => {
+        const handleResize = () => {
+          setIsMediumOrLargeScreen(window.innerWidth >= 768); // Adjust the breakpoint if needed
+        };
+    
+        handleResize(); // Set the initial screen size
+    
+        window.addEventListener('resize', handleResize);
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
+    
       return (
         <header  className={`${styles.header} ${darkMode ? styles.dark : styles.light}`}>
+          <Link href="/">
           <div className={styles.appName}>socialSeedling</div>
+          </Link>
           <div className={styles.userProfile}>
-            <div className={styles.userName}>{username}</div>
-            {/* {profileImage && (
+          {isMediumOrLargeScreen && <div className={styles.userName}>{username}</div>}
+            {profileImage && (
               <div className={styles.userIcon}>
                 <img src={profileImage} alt={username} className={styles.userImage} />
               </div>
             )}
-             */}
+            
           </div>
         </header>
       );

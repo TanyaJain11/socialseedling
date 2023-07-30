@@ -4,12 +4,14 @@ import Image from 'next/image';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchRandomPhotos } from '../utils/unsplashApi';
 import Card from '../components/Card';
-import styles from '../Home.module.css'
+import styles from '../styles/Home.module.css'
 import UserSuggestions from '../components/UserSuggestions'
 import ThemeToggle from '../components/ThemeToggle'
 import { FaRegMoon } from 'react-icons/fa';
 import { FaSun } from 'react-icons/fa';
 import UserProfileHeader from '../components/UserProfileHeader';
+// import { FaBars } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
 
 const NewsFeed = () => {
   const [photos, setPhotos] = useState([]);
@@ -18,6 +20,8 @@ const NewsFeed = () => {
   const [page, setPage] = useState(1);
   const [darkMode, setDarkMode] = useState(false);
   const [username,setUsername] = useState([]);
+  const [showUserSuggestions, setShowUserSuggestions] = useState(false);
+  const [isMediumOrLargeScreen, setIsMediumOrLargeScreen] = useState(true);
 
   useEffect(() => {
     fetchPhotos();
@@ -57,12 +61,29 @@ const NewsFeed = () => {
 
 
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMediumOrLargeScreen(window.innerWidth >= 768); // Adjust the breakpoint if needed
+    };
+
+    handleResize(); // Set the initial screen size
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const toggleUserSuggestions = () => {
+    setShowUserSuggestions((prevState) => !prevState);
+  };
+
   return (
     <div className={darkMode ? styles['dark-mode'] : styles['light-mode']}>
-      
-      <h1>News Feed</h1>
+      {/* <UserProfileHeader username={username} darkMode={darkMode}/> */}
+      <h1 className={styles['alignn']}>News Feed</h1>
       <button className={` theme-toggle ${darkMode ? styles['dark','theme-toggle'] : styles['light','theme-toggle']}`} style={{"marginLeft":"15px"}} onClick={() => setDarkMode(!darkMode)}>
-      {darkMode ? <FaRegMoon style={{"paddingLeft":"5px"}} size={20} color="black"/> : <FaSun style={{"paddingLeft":"5px"}} size={20} color="black"/>}</button>
+      {darkMode ? <FaSun style={{"paddingLeft":"5px"}} size={20} color="black"/> : <FaSun style={{"paddingLeft":"5px"}} size={20} color="black"/>}</button>
     
       <InfiniteScroll
         dataLength={photos.length}
@@ -101,7 +122,23 @@ const NewsFeed = () => {
             {/* setUsername((prevusername) => [...prevusername, ...]); */}
           </div>
           ))}
-      <UserSuggestions props={username} />
+    {/* Render the hamburger icon for small screens */}
+     {/* Render the hamburger icon for small screens */}
+     
+     {!isMediumOrLargeScreen && (
+        <div className={styles['hamburger-icon']} onClick={toggleUserSuggestions}>
+          <FaBars />
+        </div>
+      )}
+
+      {/* Render the UserSuggestions component based on the conditions */}
+      {(showUserSuggestions || isMediumOrLargeScreen) && (
+        <UserSuggestions
+          props={username}
+        />
+      )}
+
+      {/* <UserSuggestions props={username} classs={styles['userSuggestions'] }/> */}
     </div>
       </InfiniteScroll>
     </div>

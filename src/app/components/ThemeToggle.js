@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
-import styles from './ThemeToggle.module.css';
+import styles from '../styles/ThemeToggle.module.css';
 import { Tooltip } from 'react-tooltip';
 
 const ThemeToggle = () => {
