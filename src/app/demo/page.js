@@ -3,12 +3,9 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchRandomPhotos } from '../utils/unsplashApi';
-import UnsplashPhoto from '../utils/types.ts';
-// import styles from '../components/NewsFeed.module.css'; 
-import Link from 'next/link'; 
 import Card from '../components/Card';
 import styles from '../Home.module.css'
-import UserSuggestions from '../components/Usersuggestions'
+import UserSuggestions from '../components/UserSuggestions'
 import ThemeToggle from '../components/ThemeToggle'
 import { FaRegMoon } from 'react-icons/fa';
 import { FaSun } from 'react-icons/fa';

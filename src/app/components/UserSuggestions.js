@@ -3,8 +3,6 @@ import styles from './UserSuggestion.module.css';
 import Link from 'next/link';
 
 const UserSuggestions = ({props}) => {
-const users = ['user1', 'user2', 'user3', 'user4'];
-// console.log(props[0].user)
   return (
     <>
     <h3>Suggested Users</h3>
