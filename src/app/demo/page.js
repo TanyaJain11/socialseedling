@@ -98,7 +98,7 @@ const NewsFeed = () => {
         <div className={styles['container']} >
        
         {photos.map((photo) => (
-            <div className={styles['cardContainer']}>
+            <div key ={photo.id} className={styles['cardContainer']}>
             <Card props={photo} darkMode={darkMode}/>
             {/* setUsername((prevusername) => [...prevusername, ...]); */}
           </div>

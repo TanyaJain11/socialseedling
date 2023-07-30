@@ -532,7 +532,7 @@ const UserProfile = ({ params }) => {
           {photo.map((photo) =>
             showCard ? ( // If showCard is true, display the Card component
           
-            <div className={cardStyle['cardContainer']}>
+            <div key={photo.id} className={cardStyle['cardContainer']}>
               <Card props={photo} darkMode={darkMode}/>
               </div>
               
