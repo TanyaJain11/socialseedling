@@ -28,8 +28,7 @@ const NewsFeed = () => {
   }, []); 
 
   useEffect(() => {
-    // Apply the selected theme from local storage on mount
-    const storedTheme = localStorage.getItem('theme');
+       const storedTheme = localStorage.getItem('theme');
     if (storedTheme === 'dark') {
       setDarkMode(true);
     }
@@ -63,10 +62,10 @@ const NewsFeed = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMediumOrLargeScreen(window.innerWidth >= 768); // Adjust the breakpoint if needed
+      setIsMediumOrLargeScreen(window.innerWidth >= 768); 
     };
 
-    handleResize(); // Set the initial screen size
+    handleResize(); 
 
     window.addEventListener('resize', handleResize);
     return () => {
@@ -80,7 +79,7 @@ const NewsFeed = () => {
 
   return (
     <div className={darkMode ? styles['dark-mode'] : styles['light-mode']}>
-      {/* <UserProfileHeader username={username} darkMode={darkMode}/> */}
+ 
       <h1 className={styles['alignn']}>News Feed</h1>
       <button className={` theme-toggle ${darkMode ? styles['dark','theme-toggle'] : styles['light','theme-toggle']}`} style={{"marginLeft":"15px"}} onClick={() => setDarkMode(!darkMode)}>
       {darkMode ? <FaSun style={{"paddingLeft":"5px"}} size={20} color="black"/> : <FaSun style={{"paddingLeft":"5px"}} size={20} color="black"/>}</button>
@@ -91,7 +90,6 @@ const NewsFeed = () => {
         </div>
       )}
 
-      {/* Render the UserSuggestions component based on the conditions */}
       {(showUserSuggestions || isMediumOrLargeScreen) && (
         <UserSuggestions
           props={username}
@@ -105,40 +103,15 @@ const NewsFeed = () => {
         endMessage={<p>No more photos to display.</p>}
         priority
       >
-        {/* <div className={styles['grid-container']}>
-          {photos.map((photo) => (
-            <Link key={photo.id} href={`/demo/${encodeURIComponent(photo.user.username)}`}>
-              <div key={photo.id} className={styles['grid-item']}>
-                <Image
-                  src={photo.urls?.small}
-                  alt={photo.alt_description}
-                  width={photo.width}
-                  height={photo.height}
-                />
-                <p>{photo.topic_submission}</p>
-                <p>Likes: {photo.likes}</p>
-                {photo.location && (
-                  <p>Location: {photo.location.city}, {photo.location.country}</p>                
-                )}
-                <p className={styles['name']}>By:{photo.user.name}</p>
-                
-              </div>
-            </Link>
-          ))}
-        </div> */}
+      
         <div className={styles['container']} >
        
         {photos.map((photo) => (
             <div key ={photo.id} className={styles['cardContainer']}>
             <Card props={photo} darkMode={darkMode}/>
-            {/* setUsername((prevusername) => [...prevusername, ...]); */}
           </div>
           ))}
-    {/* Render the hamburger icon for small screens */}
-     {/* Render the hamburger icon for small screens */}
-    
-
-      {/* <UserSuggestions props={username} classs={styles['userSuggestions'] }/> */}
+ 
     </div>
       </InfiniteScroll>
     </div>

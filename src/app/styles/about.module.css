@@ -7,11 +7,10 @@
     margin-bottom:2rem;
 }
 
-/* styles.css or your CSS module */
 .buttonlink {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #333; /* Set your desired dark background color */
+    background-color: #333; 
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -19,7 +18,7 @@
   }
   
   .buttonlink:hover {
-    background-color: #555; /* Set a slightly darker color for hover effect */
+    background-color: #555; 
   }
   
 

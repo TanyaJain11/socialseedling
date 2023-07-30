@@ -38,9 +38,9 @@
   }
   
 .imageContainer {
-    width: 300px; /* Set the desired width for the container */
-    height: 200px; /* Set the desired height for the container */
-    overflow: hidden; /* Hide any overflowing content */
+    width: 300px; 
+    height: 200px; 
+    overflow: hidden; 
   }
   
   
@@ -94,7 +94,7 @@
     object-fit: cover;
   }
   
-  /* Light theme styles */
+  
   .light {
     --background-color:#ffffff;
     --text-color: #151515
@@ -106,7 +106,6 @@
     border-top:0.5px solid #eee7e7b0
   }
   
-  /* Dark theme styles */
   .dark {
     --background-color:#151515
     --text-color: #fff;
@@ -207,6 +206,18 @@
   font-size: 24px;
   color: #ffffff; 
   z-index: 100; 
+}
+
+
+
+.light-mode.hamburger-icon {
+position: fixed;
+top: 20px; 
+right: 20px; 
+cursor: pointer;
+font-size: 24px;
+color: #131111; 
+z-index: 100; 
 }
 .alignn{
   text-align: center;

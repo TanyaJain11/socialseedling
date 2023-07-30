@@ -1,4 +1,4 @@
-/* components/UserProfileHeader.module.css */
+
 
 .header {
     display: flex;
@@ -44,7 +44,7 @@
     cursor: pointer;
   }
   
-  /* Add circular shape to the user image */
+  
   .userImage {
     width: 100%;
     height: 100%;

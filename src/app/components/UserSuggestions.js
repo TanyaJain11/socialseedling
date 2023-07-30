@@ -1,37 +1,4 @@
-// import React from 'react';
-// import styles from '../styles/UserSuggestion.module.css';
-// import Link from 'next/link';
 
-// const UserSuggestions = ({props,classs}) => {
-//   return (
-//     <>
-//     <h3>Suggested Users</h3>
-//     <div className={`${styles['userSuggestions']} ${classs}`}>
-    
-          
-//        <ul>
-//         {props.map((user) => (
-//              <Link key={user.id} href={`/demo/${encodeURIComponent(user.user.username)}`}>
-//           <li key={user}>
-//             <img
-//             src={user.user.profile_image?.small}
-//             alt="User Profile"
-//             className={styles['profileImage']}
-//             width="100px"
-//             height="100px"
-//           />
-//           <span className={styles['username']}>{user.user.username}</span>
-//           </li>
-//           </Link>
-//         ))}
-//       </ul> 
-//     </div>
-    
-//     </>
-//   );
-// };
-
-// export default UserSuggestions;
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/UserSuggestion.module.css';
 import Link from 'next/link';
@@ -41,10 +8,10 @@ const UserSuggestions = ({ props }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 768); // Adjust the breakpoint if needed
+      setIsSmallScreen(window.innerWidth < 768); 
     };
 
-    handleResize(); // Set the initial screen size
+    handleResize(); 
 
     window.addEventListener('resize', handleResize);
     return () => {

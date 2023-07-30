@@ -1,20 +1,20 @@
-// components/UserProfileHeader.js
+
 
 import React,{useState,useEffect} from 'react';
 import Link from 'next/link';
 
 
-import styles from '../styles/UserProfileHeader.module.css'; // Import the CSS module for styling
+import styles from '../styles/UserProfileHeader.module.css'; 
 
     const UserProfileHeader = ({ username, profileImage,darkMode }) => {
       const [isMediumOrLargeScreen, setIsMediumOrLargeScreen] = useState(true);
 
       useEffect(() => {
         const handleResize = () => {
-          setIsMediumOrLargeScreen(window.innerWidth >= 768); // Adjust the breakpoint if needed
+          setIsMediumOrLargeScreen(window.innerWidth >= 768); 
         };
     
-        handleResize(); // Set the initial screen size
+        handleResize();
     
         window.addEventListener('resize', handleResize);
         return () => {

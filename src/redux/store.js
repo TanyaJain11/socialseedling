@@ -10,11 +10,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import apiReducer from './reducers'; // Import your custom reducer
 
-// Create the Redux store with your reducer
 const store = configureStore({
   reducer: {
     api: apiReducer,
-    // Add other reducers here if you have them
+   
   },
 });
 
