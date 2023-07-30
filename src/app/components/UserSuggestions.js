@@ -76,7 +76,7 @@ const UserSuggestions = ({ props }) => {
         </div>
       ) : (
         <div className={styles['user-suggestions-large']}>
-        
+          
           <ul>
             {props.map((user) => (
               <Link key={user.id} href={`/newsLetter/${encodeURIComponent(user.user.username)}`}>

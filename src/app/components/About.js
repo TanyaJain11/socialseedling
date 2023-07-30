@@ -19,7 +19,11 @@ const About = () => {
               <div className={styles.textBlock}>
                 <h2>About the project</h2>
                 <p>It&apos;s a simple <b>web app</b> project kind of a newsletter  build with the help of Unsplash Api</p>
-                <p style={{"color":"white"}}><Link href='/demo'>Click here to check it</Link></p>
+                <p style={{"color":"white"}}>
+                <Link className={styles.buttonlink} href="/newsLetter">
+        Click here to check it
+      </Link></p>
+                <p>You can also view the different users post on clicking on any user profile</p>
               </div>
             </section>
 
